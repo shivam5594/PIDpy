@@ -11,6 +11,7 @@ Tools to learn and visualize PID controller. Working on this tool to learn about
 ## Future goals:
 1. Read data from a robot or hardware through serial COM port
 2. Plot live Kp, Ki, Kd, error and output data
+3. Read data from a log file and animate it to visualize data
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
