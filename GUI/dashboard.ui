@@ -32,7 +32,7 @@
      <string>PID Visualizer</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="startButton">
     <property name="geometry">
      <rect>
       <x>860</x>
@@ -45,7 +45,7 @@
      <string>Start</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="kpLabel">
     <property name="geometry">
      <rect>
       <x>560</x>
@@ -58,7 +58,7 @@
      <string>Kp</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="kiLabel">
     <property name="geometry">
      <rect>
       <x>560</x>
@@ -71,7 +71,7 @@
      <string>Ki</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="kdLabel">
     <property name="geometry">
      <rect>
       <x>560</x>
@@ -84,7 +84,7 @@
      <string>Kd</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit">
+   <widget class="QTextEdit" name="kp">
     <property name="geometry">
      <rect>
       <x>590</x>
@@ -94,7 +94,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit_2">
+   <widget class="QTextEdit" name="ki">
     <property name="geometry">
      <rect>
       <x>590</x>
@@ -104,7 +104,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit_3">
+   <widget class="QTextEdit" name="kd">
     <property name="geometry">
      <rect>
       <x>590</x>
@@ -114,7 +114,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="setPointLabel">
     <property name="geometry">
      <rect>
       <x>760</x>
@@ -127,7 +127,7 @@
      <string>Set point</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit_4">
+   <widget class="QTextEdit" name="setpoint">
     <property name="geometry">
      <rect>
       <x>740</x>
@@ -148,7 +148,7 @@
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
      <item row="0" column="0">
-      <widget class="QWidget" name="widget" native="true">
+      <widget class="QWidget" name="outputPlot" native="true">
        <property name="styleSheet">
         <string notr="true">background-color: rgb(0, 0, 0);</string>
        </property>
@@ -157,21 +157,21 @@
      <item row="0" column="1" rowspan="2">
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="0">
-        <widget class="QWidget" name="widget_3" native="true">
+        <widget class="QWidget" name="kpPlot" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(0, 0, 0);</string>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QWidget" name="widget_4" native="true">
+        <widget class="QWidget" name="kiPlot" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(0, 0, 0);</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QWidget" name="widget_5" native="true">
+        <widget class="QWidget" name="kdPlot" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(0, 0, 0);</string>
          </property>
@@ -180,7 +180,7 @@
       </layout>
      </item>
      <item row="1" column="0">
-      <widget class="QWidget" name="widget_2" native="true">
+      <widget class="QWidget" name="errorPlot" native="true">
        <property name="styleSheet">
         <string notr="true">background-color: rgb(0, 0, 0);</string>
        </property>
