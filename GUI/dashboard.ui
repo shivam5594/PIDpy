@@ -113,7 +113,7 @@
      <double>-99.989999999999995</double>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="kp_2">
+   <widget class="QDoubleSpinBox" name="ki">
     <property name="geometry">
      <rect>
       <x>590</x>
@@ -126,7 +126,7 @@
      <double>-99.989999999999995</double>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="kp_3">
+   <widget class="QDoubleSpinBox" name="kd">
     <property name="geometry">
      <rect>
       <x>590</x>
@@ -139,7 +139,7 @@
      <double>-99.989999999999995</double>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="kp_4">
+   <widget class="QDoubleSpinBox" name="setpoint">
     <property name="geometry">
      <rect>
       <x>760</x>
