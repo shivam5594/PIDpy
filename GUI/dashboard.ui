@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>PIDpy</string>
   </property>
+  <property name="inputMethodHints">
+   <set>Qt::ImhNone</set>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -84,41 +87,11 @@
      <string>Kd</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="kp">
-    <property name="geometry">
-     <rect>
-      <x>590</x>
-      <y>40</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="ki">
-    <property name="geometry">
-     <rect>
-      <x>590</x>
-      <y>80</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="kd">
-    <property name="geometry">
-     <rect>
-      <x>590</x>
-      <y>120</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="setPointLabel">
     <property name="geometry">
      <rect>
-      <x>760</x>
-      <y>50</y>
+      <x>700</x>
+      <y>90</y>
       <width>60</width>
       <height>16</height>
      </rect>
@@ -127,14 +100,56 @@
      <string>Set point</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="setpoint">
+   <widget class="QDoubleSpinBox" name="kp">
     <property name="geometry">
      <rect>
-      <x>740</x>
-      <y>80</y>
-      <width>91</width>
+      <x>590</x>
+      <y>43</y>
+      <width>68</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="minimum">
+     <double>-99.989999999999995</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="kp_2">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>80</y>
+      <width>68</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <double>-99.989999999999995</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="kp_3">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>120</y>
+      <width>68</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <double>-99.989999999999995</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="kp_4">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>80</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <double>-99.989999999999995</double>
     </property>
    </widget>
    <widget class="QWidget" name="">
