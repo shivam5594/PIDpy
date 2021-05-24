@@ -1,3 +1,7 @@
 matplotlib>=3.4.1
-pyqt5>=5.12
+PyQt5>=5.14.2
+PyQtChart==5.13
+PyQt5-sip==12.8
 pyqt-tools>=1.0.0
+pyqtgraph>=0.10.0
+numpy==1.18.2
