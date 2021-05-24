@@ -25,22 +25,22 @@ class PIDpyUI(QtWidgets.QMainWindow, dashboard.Ui_PIDpy):
         self.pTerm = [0] * 100
         self.iTerm = [0] * 100
         self.dTerm = [0] * 100
-        self.currentTerm = [0] * 100
+        self.opTerm = [0] * 100
         self.errorTerm = [0] * 100
 
         # See if this can be put in layout.py
-        penUpLeft = pg.mkPen(color=(255, 255, 255), width=2)
-        penUpRight = pg.mkPen(color=(255, 255, 255), width=2)
-        penBottomLeft = pg.mkPen(color=(255, 0, 0), width=2)
-        penBottomCentre = pg.mkPen(color=(0, 255, 0), width=2)
-        penBottomRight = pg.mkPen(color=(0, 0, 255), width=2)
+        outputPen = pg.mkPen(color=(255, 255, 255), width=2)
+        errorPen = pg.mkPen(color=(255, 255, 255), width=2)
+        kpPen = pg.mkPen(color=(255, 0, 0), width=2)
+        kiPen = pg.mkPen(color=(0, 255, 0), width=2)
+        kdPen = pg.mkPen(color=(0, 0, 255), width=2)
 
         # Initial Plot
-        self.UpLeft = self.KpGraph.plot(self.xAxis, self.currentTerm, pen=penUpLeft)
-        self.UpRight = self.KiGraph.plot(self.xAxis, self.errorTerm, pen=penUpRight)
-        self.BottomLeft = self.KdGraph.plot(self.xAxis, self.pTerm, pen=penBottomLeft)
-        self.BottomCenter = self.ErrorGraph.plot(self.xAxis, self.iTerm, pen=penBottomCentre)
-        self.BottomRight = self.OutputGraph.plot(self.xAxis, self.dTerm, pen=penBottomRight)
+        self.KpGraph.plot(self.xAxis, self.pTerm, pen=kpPen)
+        self.KiGraph.plot(self.xAxis, self.iTerm, pen=kiPen)
+        self.KdGraph.plot(self.xAxis, self.dTerm, pen=kdPen)
+        self.ErrorGraph.plot(self.xAxis, self.errorTerm, pen=errorPen)
+        self.OutputGraph.plot(self.xAxis, self.opTerm, pen=outputPen)
 
     def startclicked(self):
         if self.startButton.text() == "Start":
