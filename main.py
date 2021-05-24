@@ -1,9 +1,9 @@
 import sys
 import logging as log
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtGui
 import pyqtgraph as pg
 from GUI import dashboard
-
+import pid
 
 class PIDpyUI(QtWidgets.QMainWindow, dashboard.Ui_PIDpy):
     def __init__(self, parent=None):
@@ -69,23 +69,48 @@ class PIDpyUI(QtWidgets.QMainWindow, dashboard.Ui_PIDpy):
         self.timer.setInterval(100)
         self.timer.timeout.connect(self.refreshplot)
 
-    # Start or stop the initiated timer
+    # Start or stop the initiated timer for graph
     def toggletimer(self):
         if not self.timer.isActive():
             self.timer.start(0)
         else:
             self.timer.stop()
 
+    # Called on close event on the main window
+    def closeEvent(self, event):
+        log.info("close event")
+        reply = QtGui.QMessageBox.question(self, 'Message', "Are you sure?", QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
+
+        if reply == QtGui.QMessageBox.Yes:
+            self.pidctrl.stopcontroller()
+            event.accept()
+        else:
+            event.ignore()
+
+    # Update PID controller values every time start button is clocked
+    def updatepidvalues(self):
+        self.pidctrl.updatepidvalues(self.kp.value(), self.ki.value(), self.kd.value(), 1)
+        self.pidctrl.getparams()
+
+    def initpidctrlr(self):
+        # Create PID controller to simulate without an actual plant(robot) interface
+        self.pidctrl = pid.PID(self.kp.value(), self.ki.value(), self.kd.value(), 1)
+
+    # Callback function for start button
     def startclicked(self):
         if self.startButton.text() == "Start":
             self.setcontrolsinactive()
             self.inittimer()
             self.toggletimer()
+            self.initpidctrlr()
+            self.updatepidvalues()
+            self.pidctrl.startcontroller()
             self.startButton.setText("Stop")
             log.info("Start clicked")
         else:
             self.setcontrolsactive()
             self.toggletimer()
+            self.pidctrl.stopcontroller()
             self.startButton.setText("Start")
             log.info("Stop clicked")
 
